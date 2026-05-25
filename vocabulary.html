@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI / 编程词汇表</title>
+    <style>
+      :root {
+        --bg: #f6f1e8;
+        --panel: rgba(255, 250, 242, 0.9);
+        --panel-strong: #fffdf9;
+        --text: #1f2937;
+        --muted: #5f6b7a;
+        --line: rgba(120, 90, 60, 0.16);
+        --accent: #c35b2b;
+        --accent-soft: rgba(195, 91, 43, 0.12);
+        --green: #276749;
+        --green-soft: rgba(39, 103, 73, 0.14);
+        --shadow: 0 18px 50px rgba(92, 62, 42, 0.12);
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "SF Pro Display", "PingFang SC", "Hiragino Sans GB",
+          "Microsoft YaHei", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(255, 212, 163, 0.45), transparent 32%),
+          radial-gradient(circle at top right, rgba(255, 247, 174, 0.35), transparent 22%),
+          linear-gradient(180deg, #fcf7f0 0%, #f6f1e8 48%, #efe6d8 100%);
+        min-height: 100vh;
+      }
+
+      .page {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 247, 235, 0.88));
+        border: 1px solid rgba(255, 255, 255, 0.78);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        padding: 28px;
+        margin-bottom: 20px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      h1 {
+        margin: 14px 0 12px;
+        font-size: clamp(28px, 5vw, 46px);
+        line-height: 1.08;
+      }
+
+      .hero p {
+        margin: 0;
+        max-width: 860px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;
+        margin-top: 22px;
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 20px;
+        padding: 16px 18px;
+      }
+
+      .stat-card .label {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .stat-card .value {
+        margin-top: 8px;
+        font-size: 30px;
+        font-weight: 800;
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .control-card {
+        background: var(--panel);
+        backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 16px;
+      }
+
+      .control-card label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      input,
+      select {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.92);
+        padding: 12px 14px;
+        font-size: 15px;
+        color: var(--text);
+        outline: none;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: rgba(195, 91, 43, 0.55);
+        box-shadow: 0 0 0 4px rgba(195, 91, 43, 0.1);
+      }
+
+      .filter-note {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .table-wrap {
+        overflow: hidden;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        box-shadow: var(--shadow);
+        background: var(--panel-strong);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      thead th {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: #fff7ee;
+        color: #6a4633;
+        text-align: left;
+        padding: 16px;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(167, 118, 78, 0.18);
+      }
+
+      tbody td {
+        padding: 16px;
+        border-bottom: 1px solid rgba(117, 94, 76, 0.11);
+        vertical-align: top;
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      tbody tr:hover {
+        background: rgba(255, 249, 241, 0.9);
+      }
+
+      .term {
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .term-cell {
+        min-width: 150px;
+      }
+
+      .term-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .term-pronunciation {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 13px;
+        letter-spacing: 0;
+        white-space: nowrap;
+        font-family: "Times New Roman", "Georgia", "Noto Serif", serif;
+      }
+
+      .speak-btn {
+        border: 0;
+        border-radius: 999px;
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background: rgba(195, 91, 43, 0.12);
+        color: var(--accent);
+        font-size: 16px;
+        line-height: 1;
+        cursor: pointer;
+        transition: transform 0.15s ease, background 0.15s ease;
+      }
+
+      .speak-btn:hover {
+        transform: translateY(-1px);
+        background: rgba(195, 91, 43, 0.18);
+      }
+
+      .subtle {
+        color: var(--muted);
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(31, 41, 55, 0.06);
+        color: var(--text);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .status-btn {
+        border: 0;
+        border-radius: 999px;
+        min-width: 92px;
+        padding: 10px 14px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      .status-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(60, 45, 35, 0.12);
+      }
+
+      .status-btn.pending {
+        background: rgba(31, 41, 55, 0.08);
+        color: #374151;
+      }
+
+      .status-btn.learned {
+        background: var(--green-soft);
+        color: var(--green);
+      }
+
+      .status-main {
+        font-size: 14px;
+        line-height: 1.1;
+      }
+
+      .status-hint {
+        font-size: 11px;
+        font-weight: 600;
+        opacity: 0.78;
+        line-height: 1.1;
+      }
+
+      details {
+        background: rgba(255, 251, 246, 0.95);
+        border: 1px solid rgba(173, 131, 95, 0.16);
+        border-radius: 16px;
+        padding: 12px 14px;
+      }
+
+      details summary {
+        cursor: pointer;
+        font-weight: 700;
+        color: #774935;
+      }
+
+      details p {
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+
+      .example-box {
+        min-width: 220px;
+      }
+
+      .example-box summary {
+        line-height: 1.6;
+      }
+
+      .example-translation {
+        font-size: 14px;
+      }
+
+      .empty {
+        padding: 24px;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      .footer {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: right;
+      }
+
+      @media (max-width: 980px) {
+        .controls {
+          grid-template-columns: 1fr;
+        }
+
+        .table-wrap {
+          overflow-x: auto;
+        }
+
+        table {
+          min-width: 980px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <section class="hero">
+        <div class="eyebrow">Vocabulary Lab</div>
+        <h1>AI / 编程专业词学习表</h1>
+        <p>
+          这是给你长期积累用的本地词汇表。后面你发截图或发单词过来，我们就继续往这个词库里加。页面支持中英搜索、按领域筛选、标记学习状态，以及展开查看更详细的解释。
+        </p>
+        <div class="stats">
+          <div class="stat-card">
+            <div class="label">总词库</div>
+            <div class="value" id="totalCount">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">已学会</div>
+            <div class="value" id="learnedCount">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">未学会</div>
+            <div class="value" id="unlearnedCount">0</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <div class="control-card">
+          <label for="searchInput">搜索英文或中文</label>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="例如：schema / 结构 / 界面 / newsletter"
+          />
+        </div>
+
+        <div class="control-card">
+          <label for="domainFilter">按领域分类</label>
+          <select id="domainFilter">
+            <option value="all">全部领域</option>
+          </select>
+        </div>
+
+        <div class="control-card">
+          <label for="statusFilter">学习状态</label>
+          <select id="statusFilter">
+            <option value="all">全部状态</option>
+            <option value="未学会">未学会</option>
+            <option value="已学会">已学会</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>英文</th>
+              <th>中文</th>
+              <th>小白版解释</th>
+              <th>领域</th>
+              <th>词性</th>
+              <th>常见场景</th>
+              <th>例子</th>
+              <th>学习状态</th>
+              <th>详细解释</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <div class="empty" id="emptyState" hidden>没有找到匹配的词条，换个关键词试试。</div>
+      </section>
+
+      <div class="footer">数据源文件：<code>vocabulary.csv</code> ｜ 页面文件：<code>vocabulary.html</code></div>
+    </div>
+
+    <script id="vocabulary-data" type="application/json">
+      [
+        {
+          "english": "UI",
+          "chinese": "用户界面",
+          "plain_explanation": "你和软件打交道的那一层东西，比如按钮、输入框、菜单和页面布局。",
+          "domain": "Design / Frontend",
+          "part_of_speech": "noun",
+          "ipa": "/ˌjuːˈaɪ/",
+          "speech_text": "U I",
+          "common_scenarios": "网站、App、软件界面设计",
+          "example": "This app has a clean UI.",
+          "example_chinese": "这个应用的界面很简洁。",
+          "details": "UI 是总称，只要是用户和系统交互的界面都可以叫 UI。图形界面、命令行界面、语音界面都属于 UI 范畴。",
+          "learned": "未学会"
+        },
+        {
+          "english": "GUI",
+          "chinese": "图形用户界面",
+          "plain_explanation": "一种图形化的 UI，你通过图标、窗口、按钮来操作，而不是靠输入命令。",
+          "domain": "Design / Frontend",
+          "part_of_speech": "noun",
+          "ipa": "/ˌdʒiːˌjuːˈaɪ/",
+          "speech_text": "G U I",
+          "common_scenarios": "Windows、macOS、手机 App、后台管理系统",
+          "example": "Most desktop apps use a GUI.",
+          "example_chinese": "大多数桌面应用都使用图形用户界面。",
+          "details": "GUI 是 UI 的一种。可以直接记成：GUI 是看得见并且能点来点去的界面。",
+          "learned": "未学会"
+        },
+        {
+          "english": "CLI",
+          "chinese": "命令行界面",
+          "plain_explanation": "不是点按钮，而是直接输入命令来操作程序或电脑。",
+          "domain": "Developer Tools",
+          "part_of_speech": "noun",
+          "ipa": "/ˌsiːˌelˈaɪ/",
+          "speech_text": "C L I",
+          "common_scenarios": "Terminal、Git、Python、Node.js、服务器操作",
+          "example": "Use the CLI to run the app.",
+          "example_chinese": "使用命令行来运行这个应用。",
+          "details": "CLI 也是 UI 的一种，只是它不是图形化的。新手一开始会觉得硬核，但在开发里非常常见。",
+          "learned": "未学会"
+        },
+        {
+          "english": "UX",
+          "chinese": "用户体验",
+          "plain_explanation": "强调产品用起来顺不顺、好不好懂、有没有挫败感，不只是长得好不好看。",
+          "domain": "Design / Product",
+          "part_of_speech": "noun",
+          "ipa": "/ˌjuːˈeks/",
+          "speech_text": "U X",
+          "common_scenarios": "产品设计、网页设计、App 设计",
+          "example": "Good UX reduces confusion.",
+          "example_chinese": "好的用户体验可以减少困惑。",
+          "details": "UI 更偏界面本身，UX 更偏你在使用过程中的整体感受。",
+          "learned": "未学会"
+        },
+        {
+          "english": "note",
+          "chinese": "笔记；备注；说明",
+          "plain_explanation": "表示一条记录、补充说明，或者提醒。",
+          "domain": "General / Docs",
+          "part_of_speech": "noun",
+          "ipa": "/noʊt/",
+          "speech_text": "note",
+          "common_scenarios": "文档说明、开发备注、产品说明",
+          "example": "Please read the release note.",
+          "example_chinese": "请阅读这个版本说明。",
+          "details": "release note 是很常见的搭配，表示版本说明。",
+          "learned": "未学会"
+        },
+        {
+          "english": "newsletter",
+          "chinese": "电子简报；邮件订阅",
+          "plain_explanation": "网站或公司定期发送给你的更新邮件。",
+          "domain": "Content / Marketing",
+          "part_of_speech": "noun",
+          "ipa": "/ˈnuːzˌletər/",
+          "speech_text": "newsletter",
+          "common_scenarios": "产品更新、AI 工具周报、行业资讯订阅",
+          "example": "Subscribe to our newsletter.",
+          "example_chinese": "订阅我们的电子简报。",
+          "details": "很多技术产品会用 newsletter 给用户发新品、活动和教程。",
+          "learned": "未学会"
+        },
+        {
+          "english": "schema",
+          "chinese": "结构定义；数据模式",
+          "plain_explanation": "一套规则，用来规定数据应该有哪些字段、字段类型是什么。",
+          "domain": "Data / Backend",
+          "part_of_speech": "noun",
+          "ipa": "/ˈskiːmə/",
+          "speech_text": "schema",
+          "common_scenarios": "数据库、API、JSON、AI function calling",
+          "example": "The API schema defines the response format.",
+          "example_chinese": "这个 API 的结构定义了响应格式。",
+          "details": "在编程里它很重要，因为程序之间交换数据时，必须先约定数据长什么样。",
+          "learned": "未学会"
+        },
+        {
+          "english": "assets",
+          "chinese": "资源文件；素材",
+          "plain_explanation": "项目里要用到的现成资源，比如图片、图标、字体、音频和视频。",
+          "domain": "Frontend / Design",
+          "part_of_speech": "noun",
+          "ipa": "/ˈæsets/",
+          "speech_text": "assets",
+          "common_scenarios": "前端项目、设计稿、游戏资源、网站静态文件",
+          "example": "Put the image assets in the public folder.",
+          "example_chinese": "把图片资源放到 public 文件夹里。",
+          "details": "static assets 指不会动态生成、可以直接被加载的资源文件。",
+          "learned": "未学会"
+        },
+        {
+          "english": "archive",
+          "chinese": "归档；存档",
+          "plain_explanation": "把暂时不用但还要保留的内容收起来，不是删除。",
+          "domain": "Workflow / Storage",
+          "part_of_speech": "verb or noun",
+          "ipa": "/ˈɑːrkaɪv/",
+          "speech_text": "archive",
+          "common_scenarios": "聊天归档、邮件归档、旧文章归档、历史数据保存",
+          "example": "Archive this chat for later.",
+          "example_chinese": "把这段对话归档，之后再看。",
+          "details": "archive 和 delete 不一样。archive 是收起来保留，delete 才是删掉。",
+          "learned": "未学会"
+        }
+      ]
+    </script>
+
+    <script>
+      const storageKey = "vocabulary-learned-state-v2";
+      const learnedDelayMs = 60 * 1000;
+      const rawData = document.getElementById("vocabulary-data").textContent;
+      const baseItems = JSON.parse(rawData).map((item, index) => ({
+        ...item,
+        originalIndex: index,
+      }));
+      const tableBody = document.getElementById("tableBody");
+      const emptyState = document.getElementById("emptyState");
+      const searchInput = document.getElementById("searchInput");
+      const domainFilter = document.getElementById("domainFilter");
+      const statusFilter = document.getElementById("statusFilter");
+      const totalCount = document.getElementById("totalCount");
+      const learnedCount = document.getElementById("learnedCount");
+      const unlearnedCount = document.getElementById("unlearnedCount");
+      let learnedStateCache = loadLearnedState();
+      let reorderTimer = null;
+      let displayOrderCache = [];
+
+      function encodeStateForHash(state) {
+        try {
+          return window.btoa(unescape(encodeURIComponent(JSON.stringify(state))));
+        } catch {
+          return "";
+        }
+      }
+
+      function decodeStateFromHash(value) {
+        try {
+          return JSON.parse(decodeURIComponent(escape(window.atob(value))));
+        } catch {
+          return {};
+        }
+      }
+
+      function loadHashState() {
+        const hash = window.location.hash.replace(/^#/, "");
+        const params = new URLSearchParams(hash);
+        const rawState = params.get("state");
+        return rawState ? decodeStateFromHash(rawState) : {};
+      }
+
+      function saveHashState(state) {
+        const params = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+        const encoded = encodeStateForHash(state);
+
+        if (!encoded) {
+          return;
+        }
+
+        params.set("state", encoded);
+        const newHash = params.toString();
+        if (window.location.hash.replace(/^#/, "") !== newHash) {
+          window.history.replaceState(null, "", `${window.location.pathname}#${newHash}`);
+        }
+      }
+
+      function loadLearnedState() {
+        const hashState = loadHashState();
+
+        try {
+          const storedState = JSON.parse(localStorage.getItem(storageKey) || "{}");
+          return { ...storedState, ...hashState };
+        } catch {
+          return hashState;
+        }
+      }
+
+      function saveLearnedState(state) {
+        saveHashState(state);
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(state));
+        } catch {
+          // Ignore storage failures in file:// or restricted environments.
+        }
+      }
+
+      function hydrateItems() {
+        return baseItems.map((item) => ({
+          ...item,
+          learned: learnedStateCache[item.english]?.status || item.learned,
+          learnedAt: learnedStateCache[item.english]?.learnedAt || null,
+          unlearnedAt: learnedStateCache[item.english]?.unlearnedAt || null,
+        }));
+      }
+
+      function shouldMoveLearnedToBottom(item, forceLearnedToBottom) {
+        if (item.learned !== "已学会") {
+          return false;
+        }
+
+        if (forceLearnedToBottom) {
+          return true;
+        }
+
+        if (!item.learnedAt) {
+          return true;
+        }
+
+        return Date.now() - item.learnedAt >= learnedDelayMs;
+      }
+
+      function shouldMoveUnlearnedToTop(item, forceLearnedToBottom) {
+        if (item.learned !== "未学会") {
+          return false;
+        }
+
+        if (forceLearnedToBottom) {
+          return true;
+        }
+
+        if (!item.unlearnedAt) {
+          return false;
+        }
+
+        return Date.now() - item.unlearnedAt >= learnedDelayMs;
+      }
+
+      function sortItemsForDisplay(items, forceLearnedToBottom, preserveCurrentOrder) {
+        const currentOrder = new Map(displayOrderCache.map((english, index) => [english, index]));
+
+        return [...items].sort((left, right) => {
+          if (preserveCurrentOrder) {
+            const leftCurrentIndex = currentOrder.get(left.english);
+            const rightCurrentIndex = currentOrder.get(right.english);
+
+            if (leftCurrentIndex !== undefined && rightCurrentIndex !== undefined) {
+              return leftCurrentIndex - rightCurrentIndex;
+            }
+
+            if (leftCurrentIndex !== undefined) {
+              return -1;
+            }
+
+            if (rightCurrentIndex !== undefined) {
+              return 1;
+            }
+          }
+
+          const leftMoved = shouldMoveLearnedToBottom(left, forceLearnedToBottom);
+          const rightMoved = shouldMoveLearnedToBottom(right, forceLearnedToBottom);
+          const leftPromoted = shouldMoveUnlearnedToTop(left, forceLearnedToBottom);
+          const rightPromoted = shouldMoveUnlearnedToTop(right, forceLearnedToBottom);
+
+          if (leftPromoted !== rightPromoted) {
+            return leftPromoted ? -1 : 1;
+          }
+
+          if (leftMoved !== rightMoved) {
+            return leftMoved ? 1 : -1;
+          }
+
+          if (!leftMoved && !rightMoved) {
+            const leftUnlearnedAt = left.unlearnedAt || 0;
+            const rightUnlearnedAt = right.unlearnedAt || 0;
+
+            if (leftPromoted && rightPromoted && leftUnlearnedAt !== rightUnlearnedAt) {
+              return rightUnlearnedAt - leftUnlearnedAt;
+            }
+
+            return right.originalIndex - left.originalIndex;
+          }
+
+          if (leftMoved && rightMoved) {
+            const leftLearnedAt = left.learnedAt || 0;
+            const rightLearnedAt = right.learnedAt || 0;
+
+            if (leftLearnedAt !== rightLearnedAt) {
+              return rightLearnedAt - leftLearnedAt;
+            }
+          }
+
+          const leftCurrentIndex = currentOrder.get(left.english);
+          const rightCurrentIndex = currentOrder.get(right.english);
+
+          if (leftCurrentIndex !== undefined && rightCurrentIndex !== undefined) {
+            return leftCurrentIndex - rightCurrentIndex;
+          }
+
+          if (leftCurrentIndex !== undefined) {
+            return -1;
+          }
+
+          if (rightCurrentIndex !== undefined) {
+            return 1;
+          }
+
+          return left.originalIndex - right.originalIndex;
+        });
+      }
+
+      function scheduleReorder(items) {
+        if (reorderTimer) {
+          window.clearTimeout(reorderTimer);
+          reorderTimer = null;
+        }
+
+        const pendingLearned = items
+          .filter(
+            (item) =>
+              (item.learned === "已学会" && item.learnedAt && Date.now() - item.learnedAt < learnedDelayMs) ||
+              (item.learned === "未学会" && item.unlearnedAt && Date.now() - item.unlearnedAt < learnedDelayMs)
+          )
+          .map((item) => {
+            if (item.learned === "已学会") {
+              return learnedDelayMs - (Date.now() - item.learnedAt);
+            }
+
+            return learnedDelayMs - (Date.now() - item.unlearnedAt);
+          });
+
+        if (pendingLearned.length === 0) {
+          return;
+        }
+
+        reorderTimer = window.setTimeout(() => {
+          render({ forceLearnedToBottom: true });
+        }, Math.min(...pendingLearned) + 20);
+      }
+
+      function getKeywordFilteredItems(items) {
+        const keyword = searchInput.value.trim().toLowerCase();
+
+        return items.filter((item) => {
+          const combinedText = [
+            item.english,
+            item.chinese,
+            item.plain_explanation,
+            item.domain,
+            item.part_of_speech,
+            item.ipa,
+            item.common_scenarios,
+            item.example,
+            item.example_chinese,
+            item.details,
+          ]
+            .join(" ")
+            .toLowerCase();
+
+          return !keyword || combinedText.includes(keyword);
+        });
+      }
+
+      function updateDomainOptions(items) {
+        const currentValue = domainFilter.value;
+        const keywordFilteredItems = getKeywordFilteredItems(items);
+        const selectedStatus = statusFilter.value;
+        const scopedItems =
+          selectedStatus === "all"
+            ? keywordFilteredItems
+            : keywordFilteredItems.filter((item) => item.learned === selectedStatus);
+        const domains = [...new Set(items.map((item) => item.domain))].sort();
+
+        domainFilter.innerHTML = '<option value="all">全部领域</option>';
+        domains.forEach((domain) => {
+          const count = scopedItems.filter((item) => item.domain === domain).length;
+          const option = document.createElement("option");
+          option.value = domain;
+          option.textContent = `${domain} (${count})`;
+          domainFilter.appendChild(option);
+        });
+        domainFilter.value = domains.includes(currentValue) ? currentValue : "all";
+      }
+
+      function updateStatusOptions(items) {
+        const currentValue = statusFilter.value;
+        const keywordFilteredItems = getKeywordFilteredItems(items);
+        const selectedDomain = domainFilter.value;
+        const scopedItems =
+          selectedDomain === "all"
+            ? keywordFilteredItems
+            : keywordFilteredItems.filter((item) => item.domain === selectedDomain);
+        const unlearnedItems = scopedItems.filter((item) => item.learned === "未学会");
+        const learnedItems = scopedItems.filter((item) => item.learned === "已学会");
+
+        statusFilter.innerHTML = `
+          <option value="all">全部状态</option>
+          <option value="未学会">未学会 (${unlearnedItems.length})</option>
+          <option value="已学会">已学会 (${learnedItems.length})</option>
+        `;
+        statusFilter.value = ["all", "未学会", "已学会"].includes(currentValue) ? currentValue : "all";
+      }
+
+      function getFilteredItems(items) {
+        const keywordFilteredItems = getKeywordFilteredItems(items);
+        const selectedDomain = domainFilter.value;
+        const selectedStatus = statusFilter.value;
+
+        return keywordFilteredItems.filter((item) => {
+          const matchDomain = selectedDomain === "all" || item.domain === selectedDomain;
+          const matchStatus = selectedStatus === "all" || item.learned === selectedStatus;
+          return matchDomain && matchStatus;
+        });
+      }
+
+      function createStatusButton(item) {
+        const button = document.createElement("button");
+        button.type = "button";
+        updateStatusButton(button, item.learned === "已学会");
+        button.addEventListener("click", () => {
+          const nextLearned = item.learned !== "已学会";
+          item.learned = nextLearned ? "已学会" : "未学会";
+          item.learnedAt = nextLearned ? Date.now() : null;
+          item.unlearnedAt = nextLearned ? null : Date.now();
+          learnedStateCache[item.english] = {
+            status: item.learned,
+            learnedAt: item.learnedAt,
+            unlearnedAt: item.unlearnedAt,
+          };
+          saveLearnedState(learnedStateCache);
+          updateStatusButton(button, nextLearned);
+
+          if (statusFilter.value !== "all") {
+            render({ forceLearnedToBottom: false, preserveCurrentOrder: true });
+            return;
+          }
+
+          render({ forceLearnedToBottom: false, preserveCurrentOrder: true });
+        });
+        return button;
+      }
+
+      function updateStatusButton(button, isLearned) {
+        button.className = `status-btn ${isLearned ? "learned" : "pending"}`;
+        button.title = isLearned ? "点击切换为未学会" : "点击切换为已学会";
+        button.setAttribute("aria-label", isLearned ? "已学会，点击切换为未学会" : "未学会，点击切换为已学会");
+        button.innerHTML = `<span class="status-main">${isLearned ? "已学会" : "未学会"}</span>`;
+      }
+
+      function speakTerm(item) {
+        if (!("speechSynthesis" in window)) {
+          window.alert("当前浏览器不支持语音朗读。");
+          return;
+        }
+
+        const utterance = new SpeechSynthesisUtterance(item.speech_text || item.english);
+        utterance.lang = "en-US";
+        utterance.rate = 0.92;
+        utterance.pitch = 1;
+
+        const voices = window.speechSynthesis.getVoices();
+        const preferredVoice =
+          voices.find((voice) => voice.lang === "en-US" && /Samantha|Alex|Google US English/i.test(voice.name)) ||
+          voices.find((voice) => voice.lang === "en-US");
+
+        if (preferredVoice) {
+          utterance.voice = preferredVoice;
+        }
+
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(utterance);
+      }
+
+      function createSpeakButton(item) {
+        const button = document.createElement("button");
+        button.className = "speak-btn";
+        button.type = "button";
+        button.innerHTML = "&#128266;";
+        button.title = `播放 ${item.english} 的美式发音`;
+        button.setAttribute("aria-label", `播放 ${item.english} 的美式发音`);
+        button.addEventListener("click", () => speakTerm(item));
+        return button;
+      }
+
+      function renderTable(items) {
+        tableBody.innerHTML = "";
+        emptyState.hidden = items.length !== 0;
+
+        items.forEach((item) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>
+              <div class="term-cell">
+                <div class="term-row">
+                  <div class="term">${item.english}</div>
+                </div>
+                <div class="term-pronunciation">${item.ipa || ""}</div>
+              </div>
+            </td>
+            <td>${item.chinese}</td>
+            <td>${item.plain_explanation}</td>
+            <td><span class="badge">${item.domain}</span></td>
+            <td><span class="subtle">${item.part_of_speech}</span></td>
+            <td>${item.common_scenarios}</td>
+            <td>
+              <details class="example-box">
+                <summary>${item.example}</summary>
+                <p class="example-translation">${item.example_chinese}</p>
+              </details>
+            </td>
+            <td></td>
+            <td>
+              <details>
+                <summary>展开详细解释</summary>
+                <p>${item.details}</p>
+              </details>
+            </td>
+          `;
+          row.querySelector(".term-row").appendChild(createSpeakButton(item));
+          row.children[7].appendChild(createStatusButton(item));
+          tableBody.appendChild(row);
+        });
+      }
+
+      function renderStats(allItems, filteredItems) {
+        totalCount.textContent = String(allItems.length);
+        learnedCount.textContent = String(allItems.filter((item) => item.learned === "已学会").length);
+        unlearnedCount.textContent = String(allItems.filter((item) => item.learned === "未学会").length);
+      }
+
+      function render(options = {}) {
+        const forceLearnedToBottom = options.forceLearnedToBottom ?? false;
+        const preserveCurrentOrder = options.preserveCurrentOrder ?? false;
+        const allItems = hydrateItems();
+        updateDomainOptions(allItems);
+        updateStatusOptions(allItems);
+        const filteredItems = getFilteredItems(allItems);
+        const displayItems = sortItemsForDisplay(filteredItems, forceLearnedToBottom, preserveCurrentOrder);
+        displayOrderCache = displayItems.map((item) => item.english);
+        renderTable(displayItems);
+        renderStats(allItems, filteredItems);
+        scheduleReorder(allItems);
+      }
+
+      searchInput.addEventListener("input", () => render({ forceLearnedToBottom: true, preserveCurrentOrder: false }));
+      domainFilter.addEventListener("change", () => render({ forceLearnedToBottom: true, preserveCurrentOrder: false }));
+      statusFilter.addEventListener("change", () => render({ forceLearnedToBottom: true, preserveCurrentOrder: false }));
+
+      render({ forceLearnedToBottom: true, preserveCurrentOrder: false });
+    </script>
+  </body>
+</html>
