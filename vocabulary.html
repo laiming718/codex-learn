@@ -162,6 +162,7 @@
       table {
         width: 100%;
         border-collapse: collapse;
+        table-layout: auto;
       }
 
       thead th {
@@ -184,6 +185,25 @@
         vertical-align: top;
         font-size: 15px;
         line-height: 1.65;
+      }
+
+      thead th:nth-child(2),
+      tbody td:nth-child(2) {
+        min-width: 120px;
+      }
+
+      thead th:nth-child(3),
+      tbody td:nth-child(3) {
+        min-width: 165px;
+      }
+
+      thead th:nth-child(5),
+      tbody td:nth-child(5) {
+        min-width: 72px;
+      }
+
+      thead th:nth-child(5) {
+        white-space: nowrap;
       }
 
       tbody tr:hover {
@@ -209,7 +229,8 @@
       .term-pronunciation {
         margin-top: 6px;
         color: var(--muted);
-        font-size: 13px;
+        font-size: 16px;
+        font-weight: 600;
         letter-spacing: 0;
         white-space: nowrap;
         font-family: "Times New Roman", "Georgia", "Noto Serif", serif;
@@ -217,24 +238,32 @@
 
       .speak-btn {
         border: 0;
-        border-radius: 999px;
         width: 34px;
         height: 34px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         padding: 0;
-        background: rgba(195, 91, 43, 0.12);
+        background: transparent;
         color: var(--accent);
-        font-size: 16px;
         line-height: 1;
         cursor: pointer;
-        transition: transform 0.15s ease, background 0.15s ease;
+        transition: transform 0.15s ease, opacity 0.15s ease;
+      }
+
+      .speak-btn svg {
+        width: 26px;
+        height: 26px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.95;
+        stroke-linecap: round;
+        stroke-linejoin: round;
       }
 
       .speak-btn:hover {
         transform: translateY(-1px);
-        background: rgba(195, 91, 43, 0.18);
+        opacity: 0.86;
       }
 
       .subtle {
@@ -322,6 +351,10 @@
 
       .example-translation {
         font-size: 14px;
+      }
+
+      .explain-box summary {
+        white-space: nowrap;
       }
 
       .empty {
@@ -915,11 +948,36 @@
         const button = document.createElement("button");
         button.className = "speak-btn";
         button.type = "button";
-        button.innerHTML = "&#128266;";
+        button.innerHTML = `
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.5 9.2h3.3L12.2 5v14l-4.4-4.2H4.5c-.6 0-1-.4-1-1v-3.6c0-.6.4-1 1-1z"></path>
+            <path d="M15.6 9.1c1.2 1 1.2 4.8 0 5.8"></path>
+            <path d="M18.4 7.2c2.1 1.9 2.1 8 0 9.9"></path>
+          </svg>
+        `;
         button.title = `播放 ${item.english} 的美式发音`;
         button.setAttribute("aria-label", `播放 ${item.english} 的美式发音`);
         button.addEventListener("click", () => speakTerm(item));
         return button;
+      }
+
+      function formatPartOfSpeech(partOfSpeech) {
+        const mapping = {
+          noun: "n.",
+          verb: "v.",
+          adjective: "adj.",
+          adverb: "adv.",
+          pronoun: "pron.",
+          preposition: "prep.",
+          conjunction: "conj.",
+          interjection: "int.",
+          article: "art.",
+        };
+
+        return partOfSpeech
+          .split(/\s+or\s+/i)
+          .map((part) => mapping[part.trim().toLowerCase()] || part.trim())
+          .join("<br>");
       }
 
       function renderTable(items) {
@@ -940,7 +998,7 @@
             <td>${item.chinese}</td>
             <td>${item.plain_explanation}</td>
             <td><span class="badge">${item.domain}</span></td>
-            <td><span class="subtle">${item.part_of_speech}</span></td>
+            <td><span class="subtle">${formatPartOfSpeech(item.part_of_speech)}</span></td>
             <td>${item.common_scenarios}</td>
             <td>
               <details class="example-box">
@@ -950,8 +1008,8 @@
             </td>
             <td></td>
             <td>
-              <details>
-                <summary>展开详细解释</summary>
+              <details class="explain-box">
+                <summary>详细解释</summary>
                 <p>${item.details}</p>
               </details>
             </td>
