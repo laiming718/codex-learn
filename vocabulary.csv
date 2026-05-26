@@ -1,10 +1,10 @@
 english,chinese,plain_explanation,domain,part_of_speech,ipa,speech_text,common_scenarios,example,example_chinese,details,learned
-UI,用户界面,"你和软件打交道的那一层东西，比如按钮、输入框、菜单和页面布局。",Design / Frontend,noun,/ˌjuːˈaɪ/,"U I","网站、App、软件界面设计","This app has a clean UI.","这个应用的界面很简洁。","UI 是总称，只要是用户和系统交互的界面都可以叫 UI。图形界面、命令行界面、语音界面都属于 UI 范畴。",未学会
-GUI,图形用户界面,"一种图形化的 UI，你通过图标、窗口、按钮来操作，而不是靠输入命令。",Design / Frontend,noun,/ˌdʒiːˌjuːˈaɪ/,"G U I","Windows、macOS、手机 App、后台管理系统","Most desktop apps use a GUI.","大多数桌面应用都使用图形用户界面。","GUI 是 UI 的一种。可以直接记成：GUI 是看得见并且能点来点去的界面。",未学会
-CLI,命令行界面,"不是点按钮，而是直接输入命令来操作程序或电脑。",Developer Tools,noun,/ˌsiːˌelˈaɪ/,"C L I","Terminal、Git、Python、Node.js、服务器操作","Use the CLI to run the app.","使用命令行来运行这个应用。","CLI 也是 UI 的一种，只是它不是图形化的。新手一开始会觉得硬核，但在开发里非常常见。",未学会
-UX,用户体验,"强调产品用起来顺不顺、好不好懂、有没有挫败感，不只是长得好不好看。",Design / Product,noun,/ˌjuːˈeks/,"U X","产品设计、网页设计、App 设计","Good UX reduces confusion.","好的用户体验可以减少困惑。","UI 更偏界面本身，UX 更偏你在使用过程中的整体感受。",未学会
-note,笔记；备注；说明,"表示一条记录、补充说明，或者提醒。",General / Docs,noun,/noʊt/,note,"文档说明、开发备注、产品说明","Please read the release note.","请阅读这个版本说明。","release note 是很常见的搭配，表示版本说明。",未学会
-newsletter,电子简报；邮件订阅,"网站或公司定期发送给你的更新邮件。",Content / Marketing,noun,/ˈnuːzˌletər/,newsletter,"产品更新、AI 工具周报、行业资讯订阅","Subscribe to our newsletter.","订阅我们的电子简报。","很多技术产品会用 newsletter 给用户发新品、活动和教程。",未学会
-schema,结构定义；数据模式,"一套规则，用来规定数据应该有哪些字段、字段类型是什么。",Data / Backend,noun,/ˈskiːmə/,schema,"数据库、API、JSON、AI function calling","The API schema defines the response format.","这个 API 的结构定义了响应格式。","在编程里它很重要，因为程序之间交换数据时，必须先约定数据长什么样。",未学会
-assets,资源文件；素材,"项目里要用到的现成资源，比如图片、图标、字体、音频和视频。",Frontend / Design,noun,/ˈæsets/,assets,"前端项目、设计稿、游戏资源、网站静态文件","Put the image assets in the public folder.","把图片资源放到 public 文件夹里。","static assets 指不会动态生成、可以直接被加载的资源文件。",未学会
-archive,归档；存档,"把暂时不用但还要保留的内容收起来，不是删除。",Workflow / Storage,verb or noun,/ˈɑːrkaɪv/,archive,"聊天归档、邮件归档、旧文章归档、历史数据保存","Archive this chat for later.","把这段对话归档，之后再看。","archive 和 delete 不一样。archive 是收起来保留，delete 才是删掉。",未学会
+UI,用户界面,"你和软件打交道的那一层东西，比如按钮、输入框、菜单和页面布局。",缩写术语,noun,/ˌjuːˈaɪ/,"U I","网站、App、软件界面设计","This app has a clean UI.","这个应用的界面很简洁。","UI 是总称，只要是用户和系统交互的界面都可以叫 UI。图形界面、命令行界面、语音界面都属于 UI 范畴。",未学会
+GUI,图形用户界面,"一种图形化的 UI，你通过图标、窗口、按钮来操作，而不是靠输入命令。",缩写术语,noun,/ˌdʒiːˌjuːˈaɪ/,"G U I","Windows、macOS、手机 App、后台管理系统","Most desktop apps use a GUI.","大多数桌面应用都使用图形用户界面。","GUI 是 UI 的一种。可以直接记成：GUI 是看得见并且能点来点去的界面。",未学会
+CLI,命令行界面,"不是点按钮，而是直接输入命令来操作程序或电脑。",缩写术语,noun,/ˌsiːˌelˈaɪ/,"C L I","Terminal、Git、Python、Node.js、服务器操作","Use the CLI to run the app.","使用命令行来运行这个应用。","CLI 也是 UI 的一种，只是它不是图形化的。新手一开始会觉得硬核，但在开发里非常常见。",未学会
+UX,用户体验,"强调产品用起来顺不顺、好不好懂、有没有挫败感，不只是长得好不好看。",缩写术语,noun,/ˌjuːˈeks/,"U X","产品设计、网页设计、App 设计","Good UX reduces confusion.","好的用户体验可以减少困惑。","UI 更偏界面本身，UX 更偏你在使用过程中的整体感受。",未学会
+note,笔记；备注；说明,"表示一条记录、补充说明，或者提醒。",日常用词,noun,/noʊt/,note,"文档说明、开发备注、产品说明","Please read the release note.","请阅读这个版本说明。","release note 是很常见的搭配，表示版本说明。",未学会
+newsletter,电子简报；邮件订阅,"网站或公司定期发送给你的更新邮件。",专业词汇,noun,/ˈnuːzˌletər/,newsletter,"产品更新、AI 工具周报、行业资讯订阅","Subscribe to our newsletter.","订阅我们的电子简报。","很多技术产品会用 newsletter 给用户发新品、活动和教程。",未学会
+schema,结构定义；数据模式,"一套规则，用来规定数据应该有哪些字段、字段类型是什么。",专业术语,noun,/ˈskiːmə/,schema,"数据库、API、JSON、AI function calling","The API schema defines the response format.","这个 API 的结构定义了响应格式。","在编程里它很重要，因为程序之间交换数据时，必须先约定数据长什么样。",未学会
+assets,资源文件；素材,"项目里要用到的现成资源，比如图片、图标、字体、音频和视频。",专业术语,noun,/ˈæsets/,assets,"前端项目、设计稿、游戏资源、网站静态文件","Put the image assets in the public folder.","把图片资源放到 public 文件夹里。","static assets 指不会动态生成、可以直接被加载的资源文件。",未学会
+archive,归档；存档,"把暂时不用但还要保留的内容收起来，不是删除。",日常用词,verb or noun,/ˈɑːrkaɪv/,archive,"聊天归档、邮件归档、旧文章归档、历史数据保存","Archive this chat for later.","把这段对话归档，之后再看。","archive 和 delete 不一样。archive 是收起来保留，delete 才是删掉。",未学会
