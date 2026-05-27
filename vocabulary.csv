@@ -8,3 +8,98 @@ newsletter,电子简报；邮件订阅,"网站或公司定期发送给你的更�
 schema,结构定义；数据模式,"一套规则，用来规定数据应该有哪些字段、字段类型是什么。",专业术语,noun,/ˈskiːmə/,schema,"数据库、API、JSON、AI function calling","The API schema defines the response format.","这个 API 的结构定义了响应格式。","在编程里它很重要，因为程序之间交换数据时，必须先约定数据长什么样。",未学会
 assets,资源文件；素材,"项目里要用到的现成资源，比如图片、图标、字体、音频和视频。",专业术语,noun,/ˈæsets/,assets,"前端项目、设计稿、游戏资源、网站静态文件","Put the image assets in the public folder.","把图片资源放到 public 文件夹里。","static assets 指不会动态生成、可以直接被加载的资源文件。",未学会
 archive,归档；存档,"把暂时不用但还要保留的内容收起来，不是删除。",日常用词,verb or noun,/ˈɑːrkaɪv/,archive,"聊天归档、邮件归档、旧文章归档、历史数据保存","Archive this chat for later.","把这段对话归档，之后再看。","archive 和 delete 不一样。archive 是收起来保留，delete 才是删掉。",未学会
+vibe,氛围；感觉,"表示一种整体感觉、气场或者风格，不一定能精确说清，但能感受到。",日常用词,noun,/vaɪb/,vibe,"设计风格、产品气质、社交表达","This landing page has a calm vibe.","这个落地页有一种很平静的氛围。","在产品、设计和日常表达里都很常见。它常常不是指具体功能，而是整体给人的感觉。",未学会
+coding,编程,"指写代码这件事，也可以泛指做开发。",日常用词,noun,/ˈkoʊdɪŋ/,coding,"写代码、开发学习、技术讨论","I spent the evening coding.","我晚上一直在写代码。","coding 比 programing 更口语化一些，很多人会直接用它表示“在写代码”。",未学会
+prompt,提示；提示词,"给 AI 或系统的一段输入内容，用来告诉它你想让它做什么。",专业术语,noun,/prɑːmpt/,prompt,"AI 对话、图像生成、命令提示","Write a better prompt for the model.","给这个模型写一个更好的提示词。","在 AI 场景里，prompt 很关键，因为输出质量通常很依赖你怎么提问。",未学会
+perform,表现；执行,"可以表示一个人或系统“表现如何”，也可以表示“执行某个动作或任务”。",专业词汇,verb,/pərˈfɔːrm/,perform,"任务执行、系统行为、工作表现","The script can perform the task automatically.","这个脚本可以自动执行这个任务。","在编程和产品语境里，perform 常带有“执行操作”的意思，不只是人的表演或表现。",未学会
+performance,性能；表现,"既可以指系统运行得快不快、稳不稳，也可以指整体表现好不好。",专业术语,noun,/pərˈfɔːrməns/,performance,"网站速度、程序效率、系统优化","We need to improve the app's performance.","我们需要提升这个应用的性能。","在开发里最常见的是“性能”这个意思，比如加载速度、响应时间、资源占用等。",未学会
+Auto-GPT,自动执行的 AI 智能体,"一种会自己拆任务、自己连续执行步骤的 AI agent，不需要你每一步都手动提示。",缩写术语,noun,/ˌɔːtoʊ ˌdʒiː piː ˈtiː/,"Auto G P T","AI agent、自动化任务、多步执行","Auto-GPT can break a goal into smaller steps.","Auto-GPT 可以把一个目标拆成更小的步骤。","它不是普通聊天机器人，而是更偏“自动执行任务”的 AI agent 概念。",未学会
+RAG,检索增强生成,"先去查资料，再结合查到的内容生成回答的一种 AI 方法。",缩写术语,noun,/r æ ɡ/,"R A G","知识库问答、企业 AI、文档检索","RAG helps the assistant answer with external knowledge.","RAG 可以帮助助手结合外部知识来回答。","RAG 的核心不是让模型硬想，而是先检索相关资料，再基于这些资料生成答案。",未学会
+harness,利用；调用；驾驭,"表示把某种能力、工具或资源用起来，让它为你工作。",专业词汇,verb or noun,/ˈhɑːrnəs/,harness,"工具调用、模型使用、测试框架","We can harness the model to summarize long documents.","我们可以利用这个模型来总结长文档。","在技术语境里很常见，比如 harness the power of AI，或者 test harness 表示测试支架。",未学会
+API,应用程序接口,"一套规则，让不同的软件、系统或服务可以互相通信。",缩写术语,noun,/ˌeɪ piː ˈaɪ/,"A P I","前后端通信、第三方服务接入、AI 调用","This API returns the user profile.","这个 API 会返回用户资料。","你可以把 API 理解成两个系统之间约定好的“沟通方式”。前端、后端、AI 服务里都会反复见到它。",未学会
+model,模型,"在 AI 里指能够理解输入并生成输出的核心系统。",专业术语,noun,/ˈmɑːdəl/,model,"AI 对话、图像生成、机器学习","The model answered the question correctly.","这个模型正确回答了问题。","在 AI 场景里，model 通常就是你真正调用来生成结果的那个核心能力。",未学会
+token,词元；文本单位,"模型处理文字时使用的最小计数单位，不完全等于一个单词。",专业术语,noun,/ˈtoʊkən/,token,"模型计费、上下文长度、提示词优化","This prompt uses too many tokens.","这个提示词用了太多 token。","AI 产品里经常按 token 计费，也会限制最大 token 数，所以它是很关键的基础词。",未学会
+context,上下文,"当前问题前后的背景信息，帮助系统更准确理解你的意思。",专业术语,noun,/ˈkɑːntekst/,context,"AI 对话、程序执行、文档理解","The model needs more context to answer well.","这个模型需要更多上下文才能答得更好。","context 可以理解成“这句话放在什么背景里”。在 AI 里，上下文越清楚，回答通常越稳。",未学会
+inference,推理；模型生成过程,"模型根据输入生成输出的过程，也常指正式运行模型。",专业术语,noun,/ˈɪnfərəns/,inference,"模型调用、线上服务、AI 性能","Inference takes longer on a larger model.","更大的模型在推理时会更慢。","在 AI 里，inference 不是单纯的逻辑推理，也常指“模型真正开始跑并给结果”的过程。",未学会
+agent,智能体；代理,"一种会接收目标、调用工具、分步骤完成任务的 AI 系统。",专业术语,noun,/ˈeɪdʒənt/,agent,"AI 自动化、多步任务、工具调用","The agent can search the web and summarize the result.","这个智能体可以搜索网页并总结结果。","agent 比普通聊天更主动，它不只是回答，还会自己执行步骤、调用工具。",未学会
+debug,调试；排查问题,"查找程序为什么出错，并一步步把问题修掉。",专业词汇,verb or noun,/diːˈbʌɡ/,debug,"报错排查、代码修复、开发流程","We need to debug this error before release.","我们需要在发布前把这个错误调试清楚。","debug 是开发里非常高频的动作，意思就是顺着线索把 bug 找出来。",未学会
+deploy,部署；上线,"把程序或服务正式放到可运行环境里，让别人能使用。",专业词汇,verb,/dɪˈplɔɪ/,deploy,"网站上线、模型发布、服务器操作","We are ready to deploy the app.","我们已经准备好把这个应用部署上线了。","写完代码不等于结束，deploy 才是把它真正放到外部环境里运行。",未学会
+frontend,前端,"用户直接看到和操作的那一层界面代码。",专业术语,noun,/ˈfrʌntˌend/,frontend,"网页页面、交互界面、浏览器开发","She works on the frontend of the website.","她负责这个网站的前端部分。","前端主要负责页面、按钮、输入框、交互这些用户能直接接触到的东西。",未学会
+backend,后端,"负责数据处理、业务逻辑和服务器运行的那一层。",专业术语,noun,/ˈbækˌend/,backend,"服务器、数据库、接口处理","The backend stores the order data.","后端会保存订单数据。","后端通常不直接给用户看，但它负责支撑页面背后的逻辑和数据流动。",未学会
+database,数据库,"专门用来存储、组织和读取数据的系统。",专业术语,noun,/ˈdeɪtəbeɪs/,database,"用户数据、业务系统、信息存储","The user data is stored in the database.","用户数据被存储在数据库里。","数据库可以理解成更适合程序使用的大型资料库，不只是简单表格。",未学会
+framework,框架,"一套现成的开发结构和工具，帮助你更快搭建项目。",专业术语,noun,/ˈfreɪmwɝːk/,framework,"Web 开发、应用搭建、项目结构","This framework makes app development faster.","这个框架让应用开发更快。","框架不是一个具体功能，而是一套帮你组织代码、减少重复劳动的基础结构。",未学会
+fine-tuning,微调,"在已有模型基础上继续训练，让它更适合某个具体任务。",专业术语,noun,/ˌfaɪn ˈtuːnɪŋ/,fine-tuning,"模型定制、行业场景、专用能力","Fine-tuning can improve domain-specific answers.","微调可以提升特定领域的回答效果。","它不是从零开始训练模型，而是在已有模型上继续调整，让它更贴合你的需求。",未学会
+embedding,向量表示；嵌入,"把文字或内容转换成便于机器比较和检索的数字表示。",专业术语,noun,/ɪmˈbedɪŋ/,embedding,"RAG、语义搜索、知识库","We store embeddings for semantic search.","我们会存储 embedding 来做语义搜索。","embedding 的重点不是展示给人看，而是让机器知道“哪些内容更相似”。",未学会
+reasoning,推理能力,"模型根据信息一步步思考并得出结果的能力。",专业术语,noun,/ˈriːzənɪŋ/,reasoning,"复杂问答、规划、多步任务","This task requires stronger reasoning.","这个任务需要更强的推理能力。","在 AI 场景里，reasoning 往往指模型是否能处理更复杂、更有步骤的思考。",未学会
+multimodal,多模态,"能同时处理文字、图片、音频等多种输入形式。",专业术语,adjective,/ˌmʌltiˈmoʊdəl/,multimodal,"图文理解、语音交互、视觉 AI","This is a multimodal model.","这是一个多模态模型。","multimodal 的核心是“不是只会看文字”，而是能理解多种类型的信息。",未学会
+hallucination,幻觉；胡编,"模型看起来答得很像真的，但其实内容是错的或编出来的。",专业术语,noun,/həˌluːsəˈneɪʃən/,hallucination,"AI 回答质量、事实核验、RAG","RAG can reduce hallucination.","RAG 可以减少模型幻觉。","这是 AI 里非常重要的词，因为模型常常会很自信地说错话。",未学会
+latency,延迟,"从你发出请求到系统返回结果之间花的时间。",专业术语,noun,/ˈleɪtənsi/,latency,"接口响应、模型速度、用户体验","Lower latency improves the user experience.","更低的延迟会提升用户体验。","如果系统很慢，很多时候讨论的就是 latency，而不是功能本身。",未学会
+dataset,数据集,"一组被整理好、用于训练、测试或分析的数据。",专业术语,noun,/ˈdeɪtəˌset/,dataset,"模型训练、数据分析、机器学习","The model was trained on a large dataset.","这个模型是在一个很大的数据集上训练的。","dataset 可以理解成“给模型学习用的一整包数据”。",未学会
+training,训练,"让模型通过大量数据学习模式和规律的过程。",专业术语,noun,/ˈtreɪnɪŋ/,training,"模型学习、机器学习、参数调整","Training the model takes a long time.","训练这个模型需要很长时间。","training 和 inference 常常成对出现：training 是学，inference 是用。",未学会
+function,函数,"一段可以重复使用的代码，用来完成某个具体任务。",专业术语,noun,/ˈfʌŋkʃən/,function,"写代码、程序结构、逻辑封装","This function formats the date.","这个函数会格式化日期。","函数是编程里非常基础的概念，你可以把它理解成“一个可重复调用的小工具”。",未学会
+variable,变量,"一个可以保存数据的名字，值可以被读取或修改。",专业术语,noun,/ˈveriəbəl/,variable,"写代码、数据存放、逻辑处理","Store the value in a variable.","把这个值存进一个变量里。","变量像一个带名字的小盒子，用来装程序运行时需要用到的数据。",未学会
+syntax,语法,"代码必须遵守的书写规则。",专业术语,noun,/ˈsɪntæks/,syntax,"报错阅读、语言学习、代码书写","The code has a syntax error.","这段代码有语法错误。","很多初学者最先遇到的报错之一就是 syntax error，意思是“写法不符合规则”。",未学会
+repository,代码仓库,"用来保存和管理项目代码、版本记录及相关文件的地方。",专业术语,noun,/rɪˈpɑːzəˌtɔːri/,repository,"Git、项目协作、代码托管","Push the changes to the repository.","把这些改动推送到代码仓库。","repository 经常简称 repo，是开发协作里很高频的词。",未学会
+workflow,工作流,"一项工作从开始到完成的步骤流程。",日常用词,noun,/ˈwɝːkfloʊ/,workflow,"自动化流程、团队协作、任务执行","We need a better workflow for reviews.","我们需要一套更好的评审工作流。","workflow 不只用于技术，也很常见于团队协作和日常工作安排。",未学会
+issue,问题；事项；工单,"可以表示一个待处理的问题，也常表示项目中的一个任务记录。",日常用词,noun,/ˈɪʃuː/,issue,"GitHub、Bug 跟踪、任务管理","Please create an issue for this bug.","请为这个 bug 建一个 issue。","在技术团队里，issue 常常不是抽象问题，而是一条可追踪、可处理的任务记录。",未学会
+LLM,大语言模型,"一种擅长理解和生成自然语言的大型 AI 模型。",缩写术语,noun,/ˌel el ˈem/,"L L M","AI 对话、模型比较、应用开发","This app uses an LLM to answer questions.","这个应用使用 LLM 来回答问题。","LLM 是现在很多 AI 产品的核心概念，ChatGPT 这类系统背后通常就是 LLM。",未学会
+MCP,模型上下文协议,"让模型和外部工具、资源、环境更规范连接的一种协议。",缩写术语,noun,/ˌem siː ˈpiː/,"M C P","工具接入、Agent、上下文连接","MCP helps the agent access external tools.","MCP 可以帮助智能体接入外部工具。","你可以把 MCP 理解成模型和外部能力之间更统一的“接口标准”。",未学会
+task,任务,"一件已经比较明确、可以直接去做的工作。",日常用词,noun,/tæsk/,task,"开发执行、任务拆分、待办事项","This task is ready to start.","这个任务已经可以开始做了。","task 更强调“去做什么”，通常说明目标和执行方向已经比较清楚。",未学会
+problem,问题；故障,"更偏“出了毛病”或“遇到了麻烦”的意思，语气比 issue 更负面。",日常用词,noun,/ˈprɑːbləm/,problem,"报错排查、系统异常、问题描述","We need to fix this problem quickly.","我们需要尽快修掉这个问题。","在软件语境里，problem 常让人联想到故障、异常或麻烦，而不只是普通事项。",未学会
+bug,程序错误；缺陷,"代码或系统里真实存在的错误，会导致行为不对。",专业词汇,noun,/bʌɡ/,bug,"报错、缺陷修复、测试反馈","This bug affects the login flow.","这个 bug 影响了登录流程。","bug 是软件开发里最经典的词，通常比 problem 更具体，表示系统里确实有错误。",未学会
+feature,功能；特性,"一个产品或系统提供给用户使用的具体能力。",专业词汇,noun,/ˈfiːtʃər/,feature,"功能设计、需求讨论、产品迭代","We shipped a new feature this week.","我们这周上线了一个新功能。","feature 可以指用户可见的功能，也可以指产品的某种能力或卖点。",未学会
+feature request,功能需求；功能请求,"用户或团队提出希望新增某个功能的请求。",专业词汇,noun,/ˈfiːtʃər rɪˌkwest/,feature request,"产品反馈、需求管理、Issue 分类","The team opened a feature request for dark mode.","团队为深色模式提了一个功能请求。","它不表示已经要做，而是“有人提出希望加这个功能”，还需要评估。",未学会
+feedback,反馈,"别人对产品、功能或结果给出的意见和感受。",日常用词,noun,/ˈfiːdbæk/,feedback,"用户意见、评审、产品改进","Thanks for the feedback on this feature.","感谢你对这个功能的反馈。","feedback 不一定是批评，也可以是建议、感受或确认。",未学会
+idea,想法；点子,"一个还比较早期、还没完全变成明确任务的思路。",日常用词,noun,/aɪˈdiːə/,idea,"需求讨论、产品构思、头脑风暴","That's a good idea for the next version.","这是下个版本的一个好点子。","idea 往往比 task 更早期，表示“值得考虑的方向”，还没进入明确执行。",未学会
+question,问题；疑问,"一个需要被回答、确认或澄清的事情。",日常用词,noun,/ˈkwestʃən/,question,"需求澄清、协作沟通、文档讨论","I have a question about this workflow.","我对这个工作流有一个疑问。","在协作里，question 常常不是故障，而是“需要进一步确认”的点。",未学会
+label,标签,"给 issue、任务或内容打上的分类标记。",专业词汇,noun,/ˈleɪbəl/,label,"GitHub、任务分类、协作流程","Add a label to this issue.","给这个 issue 加一个标签。","label 的作用是帮助分类、筛选和管理，不是问题本身。",未学会
+PR,拉取请求；合并请求,"把代码改动提交出来，邀请别人评审并合并的一种协作记录。",缩写术语,noun,/ˌpiː ˈɑːr/,"P R","GitHub、代码评审、协作开发","I opened a PR for the fix.","我为这个修复开了一个 PR。","PR 常见于 GitHub 协作流程里，通常是在 issue 或 task 明确后开始写代码并提交评审。",未学会
+GitHub,代码托管与协作平台,"一个常用来托管代码、管理 issue 和协作开发的平台。",专业词汇,noun,/ˈɡɪtˌhʌb/,"GitHub","代码仓库、Issue 管理、PR 协作","We track the project on GitHub.","我们在 GitHub 上跟踪这个项目。","GitHub 不只是放代码的地方，它还承载 issue、PR、review、workflow 等协作动作。",未学会
+review,评审；复查,"重新看一遍内容、代码或方案，检查有没有问题或需要改进的地方。",日常用词,verb or noun,/rɪˈvjuː/,review,"代码评审、文档检查、学习复习","Please review this PR before merge.","请在合并前评审这个 PR。","review 在技术里很常见，既可以指“复习”，也可以指“评审、检查”。",未学会
+track,跟踪；追踪,"持续关注某件事的进展，知道它现在到哪一步了。",日常用词,verb,/træk/,track,"任务推进、Issue 状态、项目管理","We use issues to track progress.","我们用 issue 来跟踪进展。","track 常常表示“让一件事不要丢”，一直能看到它的状态。",未学会
+close,关闭；结束,"把一件已经处理完或不再继续的事项正式结束掉。",日常用词,verb,/kloʊz/,close,"Issue 关闭、任务结束、对话收尾","We can close this issue now.","我们现在可以把这个 issue 关掉了。","在协作里，close 很常见，表示这件事告一段落了，不再挂着。",未学会
+decision,决定；决策,"经过讨论后做出的最终判断或选择。",日常用词,noun,/dɪˈsɪʒən/,decision,"需求判断、架构选择、团队讨论","We need a decision before coding starts.","在开始写代码前我们需要先做一个决定。","decision 在技术协作里经常出现，因为很多事情不是直接做，而是要先判断方向。",未学会
+architecture,架构,"系统整体是怎么分层、怎么连接、怎么组织起来的。",专业术语,noun,/ˈɑːrkəˌtektʃər/,architecture,"系统设计、服务拆分、技术方案","The architecture needs to support future growth.","这个架构需要支持未来扩展。","architecture 不只是“长什么样”，而是系统整体如何组织和协同。",未学会
+confirm,确认,"把某件事核实清楚，确定它是真的、对的或已经决定了。",日常用词,verb,/kənˈfɝːm/,confirm,"需求确认、结果核实、协作沟通","Please confirm the final requirement.","请确认最终需求。","在协作里，confirm 很重要，因为很多误会都来自“以为已经说清楚了”。",未学会
+discuss,讨论,"围绕某个问题、方案或想法进行交流和分析。",日常用词,verb,/dɪˈskʌs/,discuss,"方案讨论、需求会议、协作沟通","Let's discuss this idea first.","我们先讨论一下这个想法。","discuss 经常出现在 issue、会议和评审里，表示先聊清楚再推进。",未学会
+change,改动；变化,"表示某个地方被修改了，或者某件事和之前不一样了。",日常用词,noun or verb,/tʃeɪndʒ/,change,"代码改动、需求变化、版本更新","I pushed the latest changes.","我推送了最新改动。","change 是开发里非常高频的基础词，经常直接指一段改动。",未学会
+fix,修复,"把出错或不对的地方改正过来。",日常用词,verb or noun,/fɪks/,fix,"Bug 修复、问题处理、代码提交","This fix resolves the login issue.","这个修复解决了登录问题。","fix 比较直白，意思就是“把坏掉的地方修好”。",未学会
+version,版本,"同一个产品、文档或代码在不同阶段的区分方式。",日常用词,noun,/ˈvɝːʒən/,version,"软件更新、文档迭代、模型发布","We released a new version today.","我们今天发布了一个新版本。","version 很常见，用来区分“这是第几版、更新到了什么阶段”。",未学会
+team,团队,"一起协作完成工作的那群人。",日常用词,noun,/tiːm/,team,"开发团队、产品团队、协作分工","The team agreed on the plan.","团队同意了这个方案。","虽然它很基础，但在技术语境里出现频率特别高，值得顺手一起学。",未学会
+Node.js,JavaScript 运行环境,"一个让 JavaScript 可以在浏览器外运行的环境，常用来做后端和工具脚本。",专业术语,noun,/ˈnoʊd ˌdʒeɪ ˈes/,"Node J S","后端服务、命令行工具、前置环境","This tool runs on Node.js.","这个工具运行在 Node.js 上。","很多前端工程、Agent 工具和自动化脚本都会依赖 Node.js。",未学会
+IDE,集成开发环境,"把写代码、运行、调试、文件管理等功能集中在一起的软件。",缩写术语,noun,/ˌaɪ diː ˈiː/,"I D E","代码编辑、项目开发、调试运行","This IDE makes coding easier.","这个 IDE 让写代码更方便。","IDE 可以理解成“开发工作台”，比单纯文本编辑器更完整。",未学会
+NPM,Node 包管理器,"Node.js 生态里常用的安装包管理器和命令工具。",缩写术语,noun,/ˌen piː ˈem/,"N P M","安装依赖、运行脚本、前端项目","Use NPM to install the package.","用 NPM 来安装这个包。","NPM 经常和 Node.js 一起出现，是很多项目安装依赖和执行脚本的入口。",未学会
+grep,文本查找工具,"一种用来搜索文件里某段文字的命令行工具。",专业词汇,noun or verb,/ɡrep/,grep,"本地搜索、日志排查、命令行操作","Use grep to find the error message.","用 grep 找一下这条报错信息。","它在命令行里非常经典，很多查找操作都会提到 grep。",未学会
+git,版本控制工具,"一个用来记录代码改动、管理历史版本、支持协作开发的工具。",专业术语,noun,/ɡɪt/,git,"代码版本、提交记录、团队协作","We use git to manage the codebase.","我们用 git 来管理代码库。","git 是开发协作里的基础工具，commit、branch、merge 都和它有关。",未学会
+command,命令,"在终端或工具里输入的一条操作指令。",日常用词,noun,/kəˈmænd/,command,"终端操作、工具调用、CLI 使用","Run this command in the terminal.","在终端里运行这条命令。","command 是命令行世界里的核心词，很多教程都会直接说“运行这个 command”。",未学会
+permission,权限,"系统或工具允许你执行某种操作的范围。",日常用词,noun,/pərˈmɪʃən/,permission,"文件访问、工具授权、安全控制","You need permission to run this action.","你需要权限才能执行这个操作。","permission 在 Agent、插件、系统安全里都很常见，表示“能不能做这件事”。",未学会
+status line,状态栏,"界面里用来显示当前状态信息的一行区域。",专业词汇,noun,/ˈsteɪtəs laɪn/,status line,"编辑器界面、上下文显示、工具栏信息","The status line shows the current model.","状态栏会显示当前模型。","在编辑器或开发工具里，status line 常用来展示路径、模式、上下文等信息。",未学会
+memory,记忆,"系统保存下来的偏好、历史信息或长期上下文。",日常用词,noun,/ˈmeməri/,memory,"Agent 记忆、长期偏好、上下文保存","The agent stores useful memory for later.","这个智能体会把有用的信息记下来以后再用。","在 AI 工具里，memory 不只是电脑内存，也常指“系统记住了什么”。",未学会
+hook,钩子；触发点,"在某个固定时机自动执行某段逻辑的机制。",专业术语,noun,/hʊk/,hook,"自动触发、流程扩展、插件机制","A hook runs before the command starts.","命令开始前会先执行一个 hook。","hook 可以理解成“预埋的触发位置”，一到那个时机就自动做事。",未学会
+plugin,插件,"可以给工具或系统额外增加能力的小模块。",专业术语,noun,/ˈplʌɡɪn/,plugin,"功能扩展、工具生态、第三方集成","This plugin adds OCR support.","这个插件增加了 OCR 支持。","plugin 常见于编辑器、Agent 工具和软件生态里，意思是“外接能力”。",未学会
+OCR,光学字符识别,"把图片里的文字识别并提取出来的技术。",缩写术语,noun,/ˌoʊ siː ˈɑːr/,"O C R","截图识别、文档提取、图片转文字","OCR can extract text from the screenshot.","OCR 可以从截图里提取文字。","你以后经常发截图学词，这个词其实很值得记。",未学会
+opencli,开放式命令行工具方案,"一种让不同工具通过命令行方式更开放接入的概念或实现。",专业词汇,noun,/ˌoʊpən ˌsiː el ˈaɪ/,opencli,"CLI 接入、工具市场、系统集成","We are evaluating opencli for tool integration.","我们正在评估 opencli 作为工具接入方案。","它不像 NPM 那么通用，但在工具生态和命令行接入语境里会出现。",未学会
+sub-agent,子智能体,"主 Agent 之下被分出来执行某个子任务的智能体。",专业术语,noun,/sʌb ˈeɪdʒənt/,sub-agent,"任务拆分、多 Agent 协作、自动化","The sub-agent handled the research step.","这个子智能体处理了调研那一步。","sub-agent 常见于多 Agent 协作，表示“主系统分出去的一个小帮手”。",未学会
+Remotion,视频生成框架,"一个用 React 思路来生成和编辑视频内容的工具或框架。",专业词汇,noun,/riːˈmoʊʃən/,Remotion,"动效视频、程序化生成、前端创作","Remotion helps generate videos with code.","Remotion 可以用代码来生成视频。","它不是最基础词，但如果你以后看动效和自动化内容创作，会碰到它。",未学会
+printer,打印机,"一种把电脑里的内容打印到纸上的设备。",日常用词,noun,/ˈprɪntər/,printer,"办公室设备、日常故障、文档处理","We have an issue with the printer.","我们的打印机出了点问题。","这是很基础的日常词，但常出现在举例和故障描述里。",未学会
+cost,成本；费用,"做一件事要花掉的钱或资源。",日常用词,noun,/kɔːst/,cost,"预算讨论、产品决策、项目评估","The main issue is cost.","主要问题是成本。","在产品和项目里，cost 不只是钱，也可以引申为时间和资源代价。",未学会
+climate change,气候变化,"地球气候长期发生的明显变化。",日常用词,noun,/ˈklaɪmət tʃeɪndʒ/,climate change,"社会议题、新闻阅读、全球讨论","Climate change is a major global issue.","气候变化是一个重大全球议题。","它不是技术词，但很适合帮助你理解 issue 在“议题”语境里的意思。",未学会
+global,全球的,"涉及整个世界范围的。",日常用词,adjective,/ˈɡloʊbəl/,global,"全球议题、国际产品、系统配置","Climate change is a major global issue.","气候变化是一个重大全球议题。","global 在技术里也常用，比如 global config、global settings。",未学会
+magazine,杂志,"定期出版的一种刊物。",日常用词,noun,/ˈmæɡəziːn/,magazine,"日常阅读、期刊例子、issue 语义","I bought the latest issue of the magazine.","我买了这本杂志的最新一期。","在这个语境里，issue 指的是“某一期”。",未学会
+latest,最新的,"离现在最近、最新发布或更新的。",日常用词,adjective,/ˈleɪtɪst/,latest,"版本更新、文档、产品发布","I bought the latest issue of the magazine.","我买了这本杂志的最新一期。","latest 在技术文档和版本说明里也特别常见。",未学会
+bank,银行,"办理存钱、转账、发卡等业务的机构。",日常用词,noun,/bæŋk/,bank,"金融服务、日常例句、issue 动词用法","The bank will issue a new card.","银行会发一张新卡。","这里的 issue 是动词，表示“发放、签发”。",未学会
+card,卡；卡片,"这里通常指银行卡、门禁卡或会员卡。",日常用词,noun,/kɑːrd/,card,"银行业务、支付、身份验证","The bank will issue a new card.","银行会发一张新卡。","card 是很基础的词，但会反复出现在支付和账号场景中。",未学会
+field,字段；栏目,"表单、页面或记录里用于填写或显示某类信息的区域。",专业词汇,noun,/fiːld/,field,"表单设计、Issue 模板、数据结构","The issue form includes several fields.","这个 issue 表单包含多个字段。","field 在技术里非常高频，可以是表单字段，也可以是数据库字段。",未学会
+assignee,被指派人；负责人,"被分配去处理某个任务或事项的人。",专业词汇,noun,/əˌsaɪˈniː/,assignee,"Issue 分配、任务协作、GitHub","Assign an assignee to the issue.","给这个 issue 指定一个负责人。","在 GitHub 等协作工具里，assignee 很常见，表示“这件事归谁跟进”。",未学会
+milestone,里程碑,"项目推进过程中的一个关键阶段或目标节点。",专业词汇,noun,/ˈmaɪlstoʊn/,milestone,"项目管理、版本规划、Issue 分类","This issue belongs to the next milestone.","这个 issue 属于下一个里程碑。","milestone 常用于把很多事项归到同一个阶段目标里。",未学会
+body,正文；主体内容,"一段文本里除标题外的主要内容。",日常用词,noun,/ˈbɑːdi/,body,"Issue 描述、文档内容、表单填写","Write the details in the issue body.","把详细内容写在 issue 正文里。","body 在技术工具里常用来表示正文部分，不是“身体”的意思。",未学会
+SSR,服务端渲染,"由服务器先把页面内容生成好，再发送给浏览器的一种渲染方式。",缩写术语,noun,/ˌes es ˈɑːr/,"S S R","前端框架、网页渲染、性能优化","SSR can improve the first page load.","SSR 可以改善页面首次加载。","它在前端、React、Next.js 相关内容里非常常见。",未学会
+hydration,激活；水合,"前端页面在浏览器接管服务器生成内容并变得可交互的过程。",专业术语,noun,/haɪˈdreɪʃən/,hydration,"React、SSR、前端渲染","The app shows a hydration mismatch error.","这个应用出现了 hydration mismatch 错误。","这是 React/SSR 场景里的高频词，表示页面从静态到可交互的接管过程。",未学会
+mismatch,不匹配,"两个本该一致的东西没有对上。",日常用词,noun,/ˌmɪsˈmætʃ/,mismatch,"前端报错、数据比对、类型检查","The server output causes a mismatch.","服务器输出导致了不匹配。","技术里很常见，比如 type mismatch、hydration mismatch。",未学会
+reproduce,复现,"把一个 bug 或现象再次稳定地做出来。",专业词汇,verb,/ˌriːprəˈduːs/,reproduce,"Bug 排查、Issue 模板、测试步骤","Can you reproduce the bug?","你能复现这个 bug 吗？","能不能 reproduce 通常决定一个问题是否容易定位。",未学会
+persist,持久保存,"让数据在关闭程序或切换环境后依然保留下来。",专业词汇,verb,/pərˈsɪst/,persist,"数据保存、状态保留、功能请求","We want to persist chat history.","我们希望把聊天记录持久保存下来。","persist 经常用于状态、历史记录、缓存等“是否能留住”的讨论。",未学会
+history,历史记录,"系统过去发生过的操作、对话或版本信息。",日常用词,noun,/ˈhɪstəri/,history,"聊天记录、版本记录、浏览历史","The app stores the chat history.","这个应用会保存聊天历史记录。","history 在软件里很常见，通常表示“之前发生过什么”。",未学会
+portability,可迁移性,"一个东西能不能方便地被带到别的环境继续使用。",专业术语,noun,/ˌpɔːrtəˈbɪləti/,portability,"项目迁移、数据携带、系统兼容","Portability is important for team workflows.","可迁移性对团队工作流很重要。","当一个工具或数据能方便迁移时，就会说它有 portability。",未学会
+benefit,好处；收益,"做某件事能带来的正面价值。",日常用词,noun,/ˈbenɪfɪt/,benefit,"方案评估、功能说明、需求价值","One benefit is better collaboration.","一个好处是协作会更顺畅。","很多方案讨论都会写 benefits，表示为什么值得做。",未学会
+behavior,行为；表现方式,"系统、程序或功能实际呈现出来的运行方式。",专业术语,noun,/bɪˈheɪvjər/,behavior,"当前行为、预期行为、功能对比","The current behavior is confusing.","当前行为有点让人困惑。","在 issue 和测试里很常见，尤其是 current behavior / expected behavior。",未学会
+expected,预期的,"按计划、按设想应该出现的。",日常用词,adjective,/ɪkˈspektɪd/,expected,"预期结果、测试用例、需求验证","This is the expected behavior.","这就是预期行为。","expected 常和 actual、current 一起出现，用来对比“应该怎样”和“实际怎样”。",未学会
