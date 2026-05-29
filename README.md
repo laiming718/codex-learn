@@ -20,3 +20,5 @@
 - `todo-app/`
 - `accounting-system/`
 - `notes/`
+
+- Git 和 GitHub 学习实操进行中
