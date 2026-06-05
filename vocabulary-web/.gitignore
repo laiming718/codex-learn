@@ -2,6 +2,7 @@ node_modules
 .next
 dist
 .DS_Store
+logs
 data/*.sqlite
 data/*.sqlite-shm
 data/*.sqlite-wal

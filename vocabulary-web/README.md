@@ -8,7 +8,7 @@
 - 同一局域网下，电脑和手机访问同一套词库状态
 - 先不配置域名，不做公网访问
 
-## 启动
+## 手动启动
 
 ```bash
 npm install
@@ -28,6 +28,51 @@ npm run dev
 所以手机和 Mac mini 在同一个 Wi-Fi 下时，可以先试：
 
 - `http://192.168.5.22:3030`
+
+## 开机自启动
+
+当前已经安装用户级 `LaunchAgent`：
+
+- 配置文件：`~/Library/LaunchAgents/com.laiming.vocabulary-web.plist`
+- 项目内备份：`launchd/com.laiming.vocabulary-web.plist`
+- 运行模式：`npm run start`
+- 服务端口：`3030`
+- 日志目录：`logs/`
+
+Mac mini 登录当前用户后，系统会自动启动词库服务。
+
+查看服务状态：
+
+```bash
+launchctl print gui/501/com.laiming.vocabulary-web
+```
+
+立即重启服务：
+
+```bash
+launchctl kickstart -k gui/501/com.laiming.vocabulary-web
+```
+
+停止自启动服务：
+
+```bash
+launchctl bootout gui/501 ~/Library/LaunchAgents/com.laiming.vocabulary-web.plist
+```
+
+重新安装自启动配置：
+
+```bash
+cp launchd/com.laiming.vocabulary-web.plist ~/Library/LaunchAgents/com.laiming.vocabulary-web.plist
+launchctl bootstrap gui/501 ~/Library/LaunchAgents/com.laiming.vocabulary-web.plist
+launchctl kickstart -k gui/501/com.laiming.vocabulary-web
+```
+
+注意：自启动使用的是生产模式，所以代码改动后需要先运行：
+
+```bash
+npm run build
+launchctl kickstart -k gui/501/com.laiming.vocabulary-web
+```
 
 ## 数据
 
