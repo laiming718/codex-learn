@@ -1,6 +1,14 @@
-import { db } from "@/lib/db";
-import { getNextReviewAt } from "@/lib/time";
-import type { EntryStatus, ReviewResult, VocabularyEntry, VocabularyStats } from "@/lib/types";
+import { db } from "./db";
+import { getNextReviewAt } from "./time";
+import type {
+  CollectedTerm,
+  CollectedTermSource,
+  CollectedTermStatus,
+  EntryStatus,
+  ReviewResult,
+  VocabularyEntry,
+  VocabularyStats
+} from "./types";
 
 type EntryRow = {
   id: number;
@@ -30,6 +38,40 @@ type EntryRow = {
   streak: number;
 };
 
+type KnownEntryRow = {
+  id: number;
+  english: string;
+  chinese: string;
+};
+
+type CollectedTermRow = {
+  id: number;
+  term: string;
+  normalized_term: string;
+  simple_translation: string | null;
+  source: CollectedTermSource;
+  status: CollectedTermStatus;
+  seen_count: number;
+  context_sample: string | null;
+  first_seen_at: number;
+  last_seen_at: number;
+  processed_at: number | null;
+  entry_id: number | null;
+};
+
+type CollectTermInput = {
+  term: string;
+  source: CollectedTermSource;
+  simpleTranslation?: string | null;
+  contextSample?: string | null;
+};
+
+type CollectTermResult = {
+  term: CollectedTerm;
+  outcome: CollectedTermStatus;
+  action: "created" | "updated";
+};
+
 function mapEntry(row: EntryRow): VocabularyEntry {
   return {
     id: row.id,
@@ -57,6 +99,141 @@ function mapEntry(row: EntryRow): VocabularyEntry {
     wrongCount: row.wrong_count,
     fuzzyCount: row.fuzzy_count,
     streak: row.streak
+  };
+}
+
+function mapCollectedTerm(row: CollectedTermRow): CollectedTerm {
+  return {
+    id: row.id,
+    term: row.term,
+    normalizedTerm: row.normalized_term,
+    simpleTranslation: row.simple_translation,
+    source: row.source,
+    status: row.status,
+    seenCount: row.seen_count,
+    contextSample: row.context_sample,
+    firstSeenAt: row.first_seen_at,
+    lastSeenAt: row.last_seen_at,
+    processedAt: row.processed_at,
+    entryId: row.entry_id
+  };
+}
+
+function mergeSource(existing: CollectedTermSource, incoming: CollectedTermSource): CollectedTermSource {
+  return existing === incoming ? existing : "both";
+}
+
+export function normalizeTerm(term: string) {
+  return term.normalize("NFKC").trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+export function findKnownEntryByTerm(term: string) {
+  const normalizedTerm = normalizeTerm(term);
+
+  if (!normalizedTerm) {
+    return null;
+  }
+
+  return (
+    (db
+      .prepare(
+        `
+          SELECT id, english, chinese
+          FROM entries
+          WHERE lower(trim(english)) = ?
+          LIMIT 1
+        `
+      )
+      .get(normalizedTerm) as KnownEntryRow | undefined) || null
+  );
+}
+
+export function collectTerm(input: CollectTermInput): CollectTermResult {
+  const normalizedTerm = normalizeTerm(input.term);
+
+  if (!normalizedTerm) {
+    throw new Error("term cannot be empty");
+  }
+
+  const now = Date.now();
+  const knownEntry = findKnownEntryByTerm(normalizedTerm);
+  const existing = db
+    .prepare("SELECT * FROM collected_terms WHERE normalized_term = ?")
+    .get(normalizedTerm) as CollectedTermRow | undefined;
+  const action = existing ? "updated" : "created";
+
+  if (existing) {
+    const nextSource = mergeSource(existing.source, input.source);
+    const nextStatus = knownEntry ? "known" : existing.status;
+    const nextProcessedAt = knownEntry ? now : existing.processed_at;
+    const nextEntryId = knownEntry ? knownEntry.id : existing.entry_id;
+
+    db.prepare(
+      `
+        UPDATE collected_terms
+        SET
+          term = ?,
+          simple_translation = COALESCE(?, simple_translation),
+          source = ?,
+          status = ?,
+          seen_count = seen_count + 1,
+          context_sample = COALESCE(context_sample, ?),
+          last_seen_at = ?,
+          processed_at = ?,
+          entry_id = ?
+        WHERE id = ?
+      `
+    ).run(
+      input.term.trim(),
+      input.simpleTranslation?.trim() || null,
+      nextSource,
+      nextStatus,
+      input.contextSample?.trim() || null,
+      now,
+      nextProcessedAt,
+      nextEntryId,
+      existing.id
+    );
+  } else {
+    db.prepare(
+      `
+        INSERT INTO collected_terms (
+          term,
+          normalized_term,
+          simple_translation,
+          source,
+          status,
+          seen_count,
+          context_sample,
+          first_seen_at,
+          last_seen_at,
+          processed_at,
+          entry_id
+        )
+        VALUES (?, ?, ?, ?, ?, 1, ?, ?, ?, ?, ?)
+      `
+    ).run(
+      input.term.trim(),
+      normalizedTerm,
+      input.simpleTranslation?.trim() || null,
+      input.source,
+      knownEntry ? "known" : "pending",
+      input.contextSample?.trim() || null,
+      now,
+      now,
+      knownEntry ? now : null,
+      knownEntry?.id || null
+    );
+  }
+
+  const collected = db
+    .prepare("SELECT * FROM collected_terms WHERE normalized_term = ?")
+    .get(normalizedTerm) as CollectedTermRow;
+  const term = mapCollectedTerm(collected);
+  return {
+    term,
+    outcome: term.status,
+    action
   };
 }
 

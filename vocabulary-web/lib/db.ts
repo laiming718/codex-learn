@@ -49,6 +49,21 @@ db.exec(`
     streak INTEGER NOT NULL DEFAULT 0,
     updated_at INTEGER NOT NULL
   );
+
+  CREATE TABLE IF NOT EXISTS collected_terms (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    term TEXT NOT NULL,
+    normalized_term TEXT NOT NULL UNIQUE,
+    simple_translation TEXT,
+    source TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'pending',
+    seen_count INTEGER NOT NULL DEFAULT 1,
+    context_sample TEXT,
+    first_seen_at INTEGER NOT NULL,
+    last_seen_at INTEGER NOT NULL,
+    processed_at INTEGER,
+    entry_id INTEGER REFERENCES entries(id) ON DELETE SET NULL
+  );
 `);
 
 export { db };

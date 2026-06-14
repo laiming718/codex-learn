@@ -8,7 +8,10 @@
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 3030",
     "lint": "next lint",
-    "import:vocab": "tsx scripts/import-vocabulary.ts"
+    "import:vocab": "tsx scripts/import-vocabulary.ts",
+    "collect-term": "tsx scripts/collect-term.ts",
+    "query-collected": "tsx scripts/query-collected-terms.ts",
+    "daily-report": "node scripts/vocabulary-daily-report.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

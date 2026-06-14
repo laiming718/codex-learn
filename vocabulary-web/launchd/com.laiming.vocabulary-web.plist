@@ -7,9 +7,13 @@
 
   <key>ProgramArguments</key>
   <array>
-    <string>/opt/homebrew/bin/npm</string>
-    <string>run</string>
+    <string>/opt/homebrew/bin/node</string>
+    <string>/Users/laiming/Documents/Workspace/Codex/vocabulary-web/node_modules/next/dist/bin/next</string>
     <string>start</string>
+    <string>-H</string>
+    <string>0.0.0.0</string>
+    <string>-p</string>
+    <string>3030</string>
   </array>
 
   <key>WorkingDirectory</key>
@@ -30,9 +34,9 @@
   <true/>
 
   <key>StandardOutPath</key>
-  <string>/Users/laiming/Documents/Workspace/Codex/vocabulary-web/logs/launchd.out.log</string>
+  <string>/tmp/com.laiming.vocabulary-web.out.log</string>
 
   <key>StandardErrorPath</key>
-  <string>/Users/laiming/Documents/Workspace/Codex/vocabulary-web/logs/launchd.err.log</string>
+  <string>/tmp/com.laiming.vocabulary-web.err.log</string>
 </dict>
 </plist>

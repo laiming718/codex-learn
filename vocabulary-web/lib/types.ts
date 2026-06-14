@@ -1,5 +1,7 @@
 export type EntryStatus = "已学会" | "未学会";
 export type ReviewResult = "forgot" | "fuzzy" | "good";
+export type CollectedTermSource = "codex" | "openclaw" | "both";
+export type CollectedTermStatus = "pending" | "imported" | "ignored" | "known";
 
 export type VocabularyEntry = {
   id: number;
@@ -35,4 +37,19 @@ export type VocabularyStats = {
   unlearned: number;
   due: number;
   newCount: number;
+};
+
+export type CollectedTerm = {
+  id: number;
+  term: string;
+  normalizedTerm: string;
+  simpleTranslation: string | null;
+  source: CollectedTermSource;
+  status: CollectedTermStatus;
+  seenCount: number;
+  contextSample: string | null;
+  firstSeenAt: number;
+  lastSeenAt: number;
+  processedAt: number | null;
+  entryId: number | null;
 };
